@@ -31,8 +31,9 @@ export const TraderProfileModal: React.FC<TraderProfileModalProps> = ({ wallet, 
     console.log('wallet', wallet)
     const hours = getTimeRangeInHours(timeRange);
     const cutoff = Date.now() - (hours * 60 * 60 * 1000);
-    return wallet.trades.filter(trade => trade.timestamp * 1000 >= cutoff);
+    return wallet.trades.filter(trade => trade.timestamp >= cutoff);
   }, [wallet.trades, timeRange]);
+  console.log("filteredTrades", filteredTrades)
 
   const totalPnL = filteredTrades.reduce((sum, trade) => sum + (trade.pnl || 0), 0);
   const totalTrades = filteredTrades.length;
@@ -318,7 +319,7 @@ export const TraderProfileModal: React.FC<TraderProfileModalProps> = ({ wallet, 
                             <td>{trade.amount.toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
                             <td>${trade.price.toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
                             <td className="text-[var(--mac-text-secondary)]">
-                              {formatDistanceToNow(trade.timestamp * 1000, { addSuffix: true })}
+                              {formatDistanceToNow(trade.timestamp, { addSuffix: true })}
                             </td>
                           </tr>
                         ))}

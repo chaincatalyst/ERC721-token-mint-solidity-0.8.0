@@ -129,6 +129,7 @@ export const useWalletStore = create<{
 
       initializeWallets: async () => {
         const { wallets } = get();
+        console.log("wallets", wallets)
         
         // Fetch data for all wallets in parallel
         for (const wallet of wallets) {
@@ -155,7 +156,7 @@ export const useWalletStore = create<{
 async function processTransactions(transactions: any[]) {
   if (!transactions) return [];
 
-  const filteredTransactions = transactions.filter(tx => tx.type === 'SWAP' || tx.type === 'TRANSFER');
+  const filteredTransactions = transactions.filter(tx => (tx.type === 'SWAP' || tx.type === 'TRANSFER') && !tx.description);
   return filteredTransactions.map(tx => {
     const description = tx.description;
     let token, amount;
@@ -172,11 +173,11 @@ async function processTransactions(transactions: any[]) {
       amount = description.split(' ')[description.split(' ').length - 2];
     }
     return {
-      timestamp: tx.timestamp,
+      timestamp: tx.timestamp * 1000,
       type: tx.type,
       token: token,
       tokenIcon: 'https://cdn-icons-png.flaticon.com/128/6318/6318574.png',
-      amount: amount,
+      amount: Number(amount),
       price: 0,
       pnl: 0,
       txHash: tx.signature
