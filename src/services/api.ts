@@ -115,6 +115,29 @@ export const fetchWalletTokens = async (walletAddress: string) => {
   }
 };
 
+export const fetchSPLMetadata = async (tokenAddress: string) => {
+  try {
+    const response = await fetch(API_ENDPOINTS.HELIUS, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        id: 'helius-test',
+        method: "getAsset",
+        params: {
+          "id": tokenAddress
+        }
+      })
+    });
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching token metadata:', error);
+    throw error;
+  }
+}
+
 // Market overview endpoints
 export const fetchMarketOverview = async (tokenAddress: string) => {
   try {

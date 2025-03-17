@@ -5,6 +5,7 @@ import type { KOLWallet, NotificationSettings, SortOption } from '../types';
 import { fetchWalletTransactions, fetchWalletTokens, fetchTokenPrice, fetchTokenMetadata } from '../services/api';
 import { API_ENDPOINTS } from '../config/api';
 import { TRACKED_WALLETS } from '../config/wallets';
+import { fetchSPLMetadata } from '../services/api';
 
 export const useWalletStore = create<{
   wallets: KOLWallet[];
@@ -135,9 +136,6 @@ export const useWalletStore = create<{
         for (const wallet of wallets) {
           await get().fetchWalletData(wallet.address)
         }
-        // await Promise.all(
-        //   wallets.map(wallet => get().fetchWalletData(wallet.address))
-        // );
       },
     }),
     {
@@ -157,32 +155,40 @@ async function processTransactions(transactions: any[]) {
   if (!transactions) return [];
 
   const filteredTransactions = transactions.filter(tx => (tx.type === 'SWAP' || tx.type === 'TRANSFER') && tx.description);
-  return filteredTransactions.map(tx => {
-    const description = tx.description;
-    let token, amount;
-    if (tx.type == 'TRANSFER') {
-      if (description.includes('a total')) {
-        token = description.split(' ')[5];
-        amount = description.split(' ')[4];
-      } else {
-        token = description.split(' ')[3];
-        amount = description.split(' ')[2];
+  const results = await Promise.all(
+    filteredTransactions.map(async (tx) => {
+      const description = tx.description;
+      let token, amount, tokenIcon = 'https://cdn-icons-png.flaticon.com/128/12114/12114239.png';
+      if (tx.type == 'TRANSFER') {
+        if (description.includes('a total')) {
+          token = description.split(' ')[5];
+          amount = description.split(' ')[4];
+        } else {
+          token = description.split(' ')[3];
+          amount = description.split(' ')[2];
+        }
+      } else if (tx.type == 'SWAP') {
+        token = description.split(' ')[description.split(' ').length - 1];
+        amount = description.split(' ')[description.split(' ').length - 2];
       }
-    } else if (tx.type == 'SWAP') {
-      token = description.split(' ')[description.split(' ').length - 1];
-      amount = description.split(' ')[description.split(' ').length - 2];
-    }
-    return {
-      timestamp: tx.timestamp * 1000,
-      type: tx.type,
-      token: token,
-      tokenIcon: 'https://cdn-icons-png.flaticon.com/128/6318/6318574.png',
-      amount: amount,
-      price: 0,
-      pnl: 0,
-      txHash: tx.signature
-    }
-  })
+      if (token != 'SOL') {
+        const metadata = await fetchSPLMetadata(token);
+        token = metadata?.result?.content?.metadata?.symbol;
+        tokenIcon = metadata?.result?.content?.links?.image;
+      }
+      return {
+        timestamp: tx.timestamp * 1000,
+        type: tx.type,
+        token: token || 'Unknown',
+        tokenIcon: tokenIcon || 'https://cdn-icons-png.flaticon.com/128/12114/12114239.png',
+        amount: amount || 0,
+        price: 0,
+        pnl: 0,
+        txHash: tx.signature
+      }
+    })
+  );
+  return results;
 }
 
 async function processTokenBalances(balances: any[]) {
@@ -197,15 +203,15 @@ async function processTokenBalances(balances: any[]) {
       //   fetchTokenMetadata(balance?.account?.data?.parsed?.info?.mint)
       // ]);
       const priceData = { priceChange24h: 0, price: 0 };
-      const metadata = { symbol: '', name : '', logoURI: '' };
+      const metadata = await fetchSPLMetadata(balance?.account?.data?.parsed?.info?.mint)
       
       holdings.push({
-        symbol: metadata.symbol || 'Unknown',
-        name: metadata.name || 'Unknown Token',
+        symbol: metadata?.result?.content?.metadata?.symbol || 'Unknown',
+        name: metadata?.result?.content?.metadata?.name || 'Unknown Token',
         amount: balance?.account?.data?.parsed?.info?.tokenAmount?.amount || 0,
         value: (balance?.account?.data?.parsed?.info?.tokenAmount?.amount || 0) * (priceData.price || 0),
         change24h: priceData.priceChange24h || 0,
-        icon: metadata.logoURI || 'https://cdn-icons-png.flaticon.com/128/6318/6318574.png'
+        icon: metadata?.result?.content?.links?.image || 'https://cdn-icons-png.flaticon.com/128/6318/6318574.png'
       });
     } catch (error) {
       console.error('Error processing token balance:', error);

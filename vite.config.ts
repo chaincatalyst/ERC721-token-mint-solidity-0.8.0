@@ -8,3 +8,7 @@ export default defineConfig({
     exclude: ['lucide-react'],
   },
 });
+
+
+
+// So11111111111111111111111111111111111111112
