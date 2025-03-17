@@ -75,7 +75,7 @@ export const fetchTokenPriceHistory = async (tokenAddress: string, type: string)
 // Wallet-related endpoints
 export const fetchWalletTransactions = async (walletAddress: string) => {
   try {
-    const response = await fetch(`https://api.helius.xyz/v0/addresses/${walletAddress}/transactions/?api-key=6e608376-f6fc-4234-b275-f70dbd272e5e`, {
+    const response = await fetch(`https://api.helius.xyz/v0/addresses/${walletAddress}/transactions/?api-key=${API_KEYS.HELIUS_API_KEY}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

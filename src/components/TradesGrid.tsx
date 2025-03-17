@@ -194,7 +194,7 @@ export const TradesGrid: React.FC<TradesGridProps> = ({ wallets, solPrice }) => 
                     <div key={index} className="bg-[var(--mac-window-bg)] rounded-lg p-3 text-sm">
                       <div className="flex items-center justify-between mb-1">
                         <div className="flex items-center space-x-2">
-                          <img src={trade.tokenIcon} alt={trade.token} className="w-4 h-4" onError={(e) => e.currentTarget.src = 'https://via.placeholder.com/24'} />
+                          <img src={trade.tokenIcon} alt={trade.token} className="w-4 h-4" onError={(e) => e.currentTarget.src = 'https://cdn-icons-png.flaticon.com/128/6318/6318574.png'} />
                           <span>{trade.token.slice(0, 10)}</span>
                         </div>
                         <span className={trade.type === 'buy' ? 'text-green-500' : 'text-red-500'}>{trade.type.toUpperCase()}</span>

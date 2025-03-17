@@ -156,7 +156,7 @@ export const TraderProfileModal: React.FC<TraderProfileModalProps> = ({ wallet, 
                 <div key={holding.name} className="mac-panel p-4">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-2">
-                      <img src={holding.icon} alt={holding.symbol} className="w-6 h-6" onError={(e) => e.currentTarget.src = 'https://via.placeholder.com/24'} />
+                      <img src={holding.icon} alt={holding.symbol} className="w-6 h-6" onError={(e) => e.currentTarget.src = 'https://cdn-icons-png.flaticon.com/128/6318/6318574.png'} />
                       <div>
                         <div className="font-medium">{holding.name.slice(0, 10)}</div>
                         <div className="text-xs text-[var(--mac-text-secondary)]">{holding.symbol}</div>
@@ -192,7 +192,7 @@ export const TraderProfileModal: React.FC<TraderProfileModalProps> = ({ wallet, 
                     <tr key={`${trade.txHash}-${index}`}>
                       <td>
                         <div className="flex items-center space-x-2">
-                          <img src={trade.tokenIcon} alt={trade.token} className="w-4 h-4" onError={(e) => e.currentTarget.src = 'https://via.placeholder.com/24'} />
+                          <img src={trade.tokenIcon} alt={trade.token} className="w-4 h-4" onError={(e) => e.currentTarget.src = 'https://cdn-icons-png.flaticon.com/128/6318/6318574.png'} />
                           <span>{trade.token.slice(0, 10)}</span>
                         </div>
                       </td>

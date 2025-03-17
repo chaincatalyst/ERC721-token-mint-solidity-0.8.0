@@ -10,10 +10,10 @@ interface TraderProfileModalProps {
   onClose: () => void;
 }
 
-type TimeRange = '24h' | '3d' | '7d' | '14d' | '30d';
+type TimeRange = '24h' | '3d' | '7d' | '14d' | '30d'| '1yr';
 
 export const TraderProfileModal: React.FC<TraderProfileModalProps> = ({ wallet, solPrice, onClose }) => {
-  const [timeRange, setTimeRange] = useState<TimeRange>('24h');
+  const [timeRange, setTimeRange] = useState<TimeRange>('1yr');
   const [showCopyConfirm, setShowCopyConfirm] = useState(false);
 
   const getTimeRangeInHours = (range: TimeRange) => {
@@ -23,13 +23,15 @@ export const TraderProfileModal: React.FC<TraderProfileModalProps> = ({ wallet, 
       case '7d': return 168;
       case '14d': return 336;
       case '30d': return 720;
+      case '1yr': return 8760;
     }
   };
 
   const filteredTrades = useMemo(() => {
+    console.log('wallet', wallet)
     const hours = getTimeRangeInHours(timeRange);
     const cutoff = Date.now() - (hours * 60 * 60 * 1000);
-    return wallet.trades.filter(trade => trade.timestamp >= cutoff);
+    return wallet.trades.filter(trade => trade.timestamp * 1000 >= cutoff);
   }, [wallet.trades, timeRange]);
 
   const totalPnL = filteredTrades.reduce((sum, trade) => sum + (trade.pnl || 0), 0);
@@ -161,7 +163,7 @@ export const TraderProfileModal: React.FC<TraderProfileModalProps> = ({ wallet, 
                     </div>
                   </div>
                   <div className="flex space-x-2">
-                    {(['24h', '3d', '7d', '14d', '30d'] as TimeRange[]).map((range) => (
+                    {(['24h', '3d', '7d', '14d', '30d', '1yr'] as TimeRange[]).map((range) => (
                       <button key={range} onClick={() => setTimeRange(range)} className={`mac-button ${timeRange === range ? 'active' : ''}`}>
                         {range}
                       </button>
@@ -244,11 +246,11 @@ export const TraderProfileModal: React.FC<TraderProfileModalProps> = ({ wallet, 
               <div className="mb-6">
                 <h3 className="text-sm font-semibold mb-3">Current Holdings</h3>
                 <div className="grid grid-cols-2 gap-4">
-                  {wallet.holdings.map((holding) => (
-                    <div key={holding.name} className="mac-panel p-4">
+                  {wallet.holdings.map((holding, index) => (
+                    <div key={index} className="mac-panel p-4">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-2">
-                          <img src={holding.icon} alt={holding.symbol} className="w-6 h-6" onError={(e) => e.currentTarget.src = 'https://via.placeholder.com/24'} />
+                          <img src={holding.icon} alt={holding.symbol} className="w-6 h-6" onError={(e) => e.currentTarget.src = 'https://cdn-icons-png.flaticon.com/128/6318/6318574.png'} />
                           <div>
                             <div className="font-medium">{holding.name}</div>
                             <div className="text-xs text-[var(--mac-text-secondary)]">
@@ -306,7 +308,7 @@ export const TraderProfileModal: React.FC<TraderProfileModalProps> = ({ wallet, 
                           <tr key={trade.txHash}>
                             <td>
                               <div className="flex items-center space-x-2">
-                                <img src={trade.tokenIcon} alt={trade.token} className="w-4 h-4" onError={(e) => e.currentTarget.src = 'https://via.placeholder.com/24'} />
+                                <img src={trade.tokenIcon} alt={trade.token} className="w-4 h-4" onError={(e) => e.currentTarget.src = 'https://cdn-icons-png.flaticon.com/128/6318/6318574.png'} />
                                 <span>{trade.token}</span>
                               </div>
                             </td>
@@ -316,7 +318,7 @@ export const TraderProfileModal: React.FC<TraderProfileModalProps> = ({ wallet, 
                             <td>{trade.amount.toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
                             <td>${trade.price.toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
                             <td className="text-[var(--mac-text-secondary)]">
-                              {formatDistanceToNow(trade.timestamp, { addSuffix: true })}
+                              {formatDistanceToNow(trade.timestamp * 1000, { addSuffix: true })}
                             </td>
                           </tr>
                         ))}

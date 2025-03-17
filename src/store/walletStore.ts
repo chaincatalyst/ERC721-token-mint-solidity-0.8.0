@@ -96,9 +96,10 @@ export const useWalletStore = create<{
             fetchWalletTokens(address)
           ]);
           console.log('transactionsResponse', transactionsResponse)
+          console.log('tokensResponse', tokensResponse)
 
           // Process transactions to get trades
-          const trades = await processTransactions(transactionsResponse.result);
+          const trades = await processTransactions(transactionsResponse);
 
           // Process token balances to get holdings
           const holdings = await processTokenBalances(tokensResponse.result?.value);
@@ -153,19 +154,34 @@ export const useWalletStore = create<{
 // Helper functions for processing API responses
 async function processTransactions(transactions: any[]) {
   if (!transactions) return [];
-  
-  return transactions
-    .filter(tx => tx.type === 'SWAP' || tx.type === 'TOKEN_TRANSFER')
-    .map(tx => ({
+
+  const filteredTransactions = transactions.filter(tx => tx.type === 'SWAP' || tx.type === 'TRANSFER');
+  return filteredTransactions.map(tx => {
+    const description = tx.description;
+    let token, amount;
+    if (tx.type == 'TRANSFER') {
+      if (description.includes('a total')) {
+        token = description.split(' ')[5];
+        amount = description.split(' ')[4];
+      } else {
+        token = description.split(' ')[3];
+        amount = description.split(' ')[2];
+      }
+    } else if (tx.type == 'SWAP') {
+      token = description.split(' ')[description.split(' ').length - 1];
+      amount = description.split(' ')[description.split(' ').length - 2];
+    }
+    return {
       timestamp: tx.timestamp,
-      type: tx.type === 'SWAP' ? (tx.tokenInAmount > tx.tokenOutAmount ? 'sell' : 'buy') : 'transfer',
-      token: tx.tokenSymbol || 'Unknown',
-      tokenIcon: tx.tokenIcon || 'https://via.placeholder.com/24',
-      amount: tx.type === 'SWAP' ? tx.tokenInAmount : tx.amount,
-      price: tx.type === 'SWAP' ? tx.tokenOutAmount / tx.tokenInAmount : 0,
+      type: tx.type,
+      token: token,
+      tokenIcon: 'https://cdn-icons-png.flaticon.com/128/6318/6318574.png',
+      amount: amount,
+      price: 0,
       pnl: 0,
       txHash: tx.signature
-    }));
+    }
+  })
 }
 
 async function processTokenBalances(balances: any[]) {
@@ -175,12 +191,12 @@ async function processTokenBalances(balances: any[]) {
   
   for (const balance of balances) {
     try {
-      const [priceData, metadata] = await Promise.all([
-        fetchTokenPrice(balance?.account?.data?.parsed?.info?.mint),
-        fetchTokenMetadata(balance?.account?.data?.parsed?.info?.mint)
-      ]);
-      // console.log("priceData", priceData)
-      // console.log("metadata", metadata)
+      // const [priceData, metadata] = await Promise.all([
+      //   fetchTokenPrice(balance?.account?.data?.parsed?.info?.mint),
+      //   fetchTokenMetadata(balance?.account?.data?.parsed?.info?.mint)
+      // ]);
+      const priceData = { priceChange24h: 0, price: 0 };
+      const metadata = { symbol: '', name : '', logoURI: '' };
       
       holdings.push({
         symbol: metadata.symbol || 'Unknown',
@@ -188,7 +204,7 @@ async function processTokenBalances(balances: any[]) {
         amount: balance?.account?.data?.parsed?.info?.tokenAmount?.amount || 0,
         value: (balance?.account?.data?.parsed?.info?.tokenAmount?.amount || 0) * (priceData.price || 0),
         change24h: priceData.priceChange24h || 0,
-        icon: metadata.logoURI || 'https://via.placeholder.com/24'
+        icon: metadata.logoURI || 'https://cdn-icons-png.flaticon.com/128/6318/6318574.png'
       });
     } catch (error) {
       console.error('Error processing token balance:', error);
