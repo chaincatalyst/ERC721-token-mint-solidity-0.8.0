@@ -156,7 +156,7 @@ export const useWalletStore = create<{
 async function processTransactions(transactions: any[]) {
   if (!transactions) return [];
 
-  const filteredTransactions = transactions.filter(tx => (tx.type === 'SWAP' || tx.type === 'TRANSFER') && !tx.description);
+  const filteredTransactions = transactions.filter(tx => (tx.type === 'SWAP' || tx.type === 'TRANSFER') && tx.description);
   return filteredTransactions.map(tx => {
     const description = tx.description;
     let token, amount;
@@ -177,7 +177,7 @@ async function processTransactions(transactions: any[]) {
       type: tx.type,
       token: token,
       tokenIcon: 'https://cdn-icons-png.flaticon.com/128/6318/6318574.png',
-      amount: Number(amount),
+      amount: amount,
       price: 0,
       pnl: 0,
       txHash: tx.signature

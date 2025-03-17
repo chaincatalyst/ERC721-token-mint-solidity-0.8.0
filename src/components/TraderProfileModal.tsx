@@ -316,7 +316,8 @@ export const TraderProfileModal: React.FC<TraderProfileModalProps> = ({ wallet, 
                             <td className={trade.type === 'buy' ? 'text-green-500' : 'text-red-500'}>
                               {trade.type.toUpperCase()}
                             </td>
-                            <td>{trade.amount.toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
+                            {/* <td>{trade.amount.toLocaleString(undefined, { maximumFractionDigits: 2 })}</td> */}
+                            <td>{trade.amount}</td>
                             <td>${trade.price.toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
                             <td className="text-[var(--mac-text-secondary)]">
                               {formatDistanceToNow(trade.timestamp, { addSuffix: true })}
