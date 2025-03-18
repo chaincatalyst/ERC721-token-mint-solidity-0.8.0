@@ -3,71 +3,19 @@ import { API_KEYS, API_ENDPOINTS } from '../config/api';
 // Token-related endpoints
 export const fetchTokenPrice = async (tokenAddress: string) => {
   try {
-    const response = await fetch(`${API_ENDPOINTS.BIRDEYE}/defi/price?address=${tokenAddress}`, {
+    await new Promise(resolve => setTimeout(resolve, 100));
+    const response = await fetch(`https://api.dexscreener.com/tokens/v1/solana/${tokenAddress}`, {
+      method: 'GET',
       headers: {
-        'X-API-KEY': API_KEYS.BIRDEYE_API_KEY
+        'Content-Type': 'application/json',
       }
     });
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
     return await response.json();
   } catch (error) {
     console.error('Error fetching token price:', error);
-    throw error;
-  }
-};
-
-export const fetchTokenMetadata = async (tokenAddress: string) => {
-  try {
-    const response = await fetch(`${API_ENDPOINTS.BIRDEYE}/defi/v3/token/meta-data/single?address=${tokenAddress}`, {
-      headers: {
-        'X-API-KEY': API_KEYS.BIRDEYE_API_KEY
-      }
-    });
-    return await response.json();
-  } catch (error) {
-    console.error('Error fetching token metadata:', error);
-    throw error;
-  }
-};
-
-export const fetchTokenVolume = async (tokenAddress: string, timeRange: string) => {
-  try {
-    const response = await fetch(`${API_ENDPOINTS.BIRDEYE}/defi/price_volume/single?address=${tokenAddress}&time_range=${timeRange}`, {
-      headers: {
-        'X-API-KEY': API_KEYS.BIRDEYE_API_KEY
-      }
-    });
-    return await response.json();
-  } catch (error) {
-    console.error('Error fetching token volume:', error);
-    throw error;
-  }
-};
-
-// Market data endpoints
-export const fetchTrendingTokens = async () => {
-  try {
-    const response = await fetch(`${API_ENDPOINTS.BIRDEYE}/defi/token_trending?sort_by=rank&sort_type=asc&offset=0&limit=20`, {
-      headers: {
-        'X-API-KEY': API_KEYS.BIRDEYE_API_KEY
-      }
-    });
-    return await response.json();
-  } catch (error) {
-    console.error('Error fetching trending tokens:', error);
-    throw error;
-  }
-};
-
-export const fetchTokenPriceHistory = async (tokenAddress: string, type: string) => {
-  try {
-    const response = await fetch(`${API_ENDPOINTS.BIRDEYE}/defi/history_price?address=${tokenAddress}&address_type=token&type=${type}`, {
-      headers: {
-        'X-API-KEY': API_KEYS.BIRDEYE_API_KEY
-      }
-    });
-    return await response.json();
-  } catch (error) {
-    console.error('Error fetching token price history:', error);
     throw error;
   }
 };
@@ -90,7 +38,6 @@ export const fetchWalletTransactions = async (walletAddress: string) => {
 
 export const fetchWalletTokens = async (walletAddress: string) => {
   try {
-    console.log(walletAddress)
     const response = await fetch(API_ENDPOINTS.HELIUS, {
       method: 'POST',
       headers: {
@@ -137,18 +84,3 @@ export const fetchSPLMetadata = async (tokenAddress: string) => {
     throw error;
   }
 }
-
-// Market overview endpoints
-export const fetchMarketOverview = async (tokenAddress: string) => {
-  try {
-    const response = await fetch(`${API_ENDPOINTS.BIRDEYE}/defi/v3/token/market-data?address=${tokenAddress}`, {
-      headers: {
-        'X-API-KEY': API_KEYS.BIRDEYE_API_KEY
-      }
-    });
-    return await response.json();
-  } catch (error) {
-    console.error('Error fetching market overview:', error);
-    throw error;
-  }
-};

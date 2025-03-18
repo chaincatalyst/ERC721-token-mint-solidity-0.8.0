@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { Connection } from '@solana/web3.js';
 import type { KOLWallet, NotificationSettings, SortOption } from '../types';
-import { fetchWalletTransactions, fetchWalletTokens, fetchTokenPrice, fetchTokenMetadata } from '../services/api';
+import { fetchWalletTransactions, fetchWalletTokens, fetchTokenPrice } from '../services/api';
 import { API_ENDPOINTS } from '../config/api';
 import { TRACKED_WALLETS } from '../config/wallets';
 import { fetchSPLMetadata } from '../services/api';
@@ -96,12 +96,11 @@ export const useWalletStore = create<{
             fetchWalletTransactions(address),
             fetchWalletTokens(address)
           ]);
-          console.log('transactionsResponse', transactionsResponse)
-          console.log('tokensResponse', tokensResponse)
 
           // Process transactions to get trades
+          console.log('transactionsResponse', transactionsResponse);
           const trades = await processTransactions(transactionsResponse);
-
+          console.log('trades', trades);
           // Process token balances to get holdings
           const holdings = await processTokenBalances(tokensResponse.result?.value);
 
@@ -130,7 +129,6 @@ export const useWalletStore = create<{
 
       initializeWallets: async () => {
         const { wallets } = get();
-        console.log("wallets", wallets)
         
         // Fetch data for all wallets in parallel
         for (const wallet of wallets) {
@@ -156,7 +154,7 @@ async function processTransactions(transactions: any[]) {
 
   const filteredTransactions = transactions.filter(tx => (tx.type === 'SWAP' || tx.type === 'TRANSFER') && tx.description);
   const results = await Promise.all(
-    filteredTransactions.map(async (tx) => {
+    filteredTransactions.slice(0, 2).map(async (tx) => {
       const description = tx.description;
       let token, amount, tokenIcon = 'https://cdn-icons-png.flaticon.com/128/12114/12114239.png';
       if (tx.type == 'TRANSFER') {
@@ -198,19 +196,16 @@ async function processTokenBalances(balances: any[]) {
   
   for (const balance of balances) {
     try {
-      // const [priceData, metadata] = await Promise.all([
-      //   fetchTokenPrice(balance?.account?.data?.parsed?.info?.mint),
-      //   fetchTokenMetadata(balance?.account?.data?.parsed?.info?.mint)
-      // ]);
-      const priceData = { priceChange24h: 0, price: 0 };
-      const metadata = await fetchSPLMetadata(balance?.account?.data?.parsed?.info?.mint)
+      const priceData = await fetchTokenPrice(balance?.account?.data?.parsed?.info?.mint);
+      console.log("priceData", priceData)
+      const metadata = await fetchSPLMetadata(balance?.account?.data?.parsed?.info?.mint);
       
       holdings.push({
         symbol: metadata?.result?.content?.metadata?.symbol || 'Unknown',
         name: metadata?.result?.content?.metadata?.name || 'Unknown Token',
         amount: balance?.account?.data?.parsed?.info?.tokenAmount?.amount || 0,
-        value: (balance?.account?.data?.parsed?.info?.tokenAmount?.amount || 0) * (priceData.price || 0),
-        change24h: priceData.priceChange24h || 0,
+        value: (balance?.account?.data?.parsed?.info?.tokenAmount?.amount || 0) * (priceData?.priceUsd || 0),
+        change24h: priceData?.priceChange?.h24 || 0,
         icon: metadata?.result?.content?.links?.image || 'https://cdn-icons-png.flaticon.com/128/6318/6318574.png'
       });
     } catch (error) {

@@ -28,12 +28,10 @@ export const TraderProfileModal: React.FC<TraderProfileModalProps> = ({ wallet, 
   };
 
   const filteredTrades = useMemo(() => {
-    console.log('wallet', wallet)
     const hours = getTimeRangeInHours(timeRange);
     const cutoff = Date.now() - (hours * 60 * 60 * 1000);
     return wallet.trades.filter(trade => trade.timestamp >= cutoff);
   }, [wallet.trades, timeRange]);
-  console.log("filteredTrades", filteredTrades)
 
   const totalPnL = filteredTrades.reduce((sum, trade) => sum + (trade.pnl || 0), 0);
   const totalTrades = filteredTrades.length;
@@ -255,7 +253,8 @@ export const TraderProfileModal: React.FC<TraderProfileModalProps> = ({ wallet, 
                           <div>
                             <div className="font-medium">{holding.name}</div>
                             <div className="text-xs text-[var(--mac-text-secondary)]">
-                              {holding.symbol} • {((holding.value / totalPortfolioValue) * 100).toFixed(1)}%
+                              {holding.symbol}
+                               {/* • {((holding.value / totalPortfolioValue) * 100).toFixed(1)}% */}
                             </div>
                           </div>
                         </div>
