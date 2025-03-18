@@ -1,6 +1,4 @@
-import { KOLWallet } from '../types';
-
-export const TRACKED_WALLETS: KOLWallet[] = [
+const TRACKED_WALLETS = [
     {
         address: "7ABz8qEFZTHPkovMDsmQkm64DZWN5wRtU7LEtD2ShkQ6",
         name: "Red",
@@ -1494,11 +1492,4 @@ export const TRACKED_WALLETS: KOLWallet[] = [
     }
 ]
 
-
-// Group wallets by category for easier filtering
-export const WALLET_CATEGORIES = {
-  DeFi: TRACKED_WALLETS.filter(w => w.tags.includes('DeFi')),
-  NFT: TRACKED_WALLETS.filter(w => w.tags.includes('NFT')),
-  Gaming: TRACKED_WALLETS.filter(w => w.tags.includes('Gaming')),
-  Metaverse: TRACKED_WALLETS.filter(w => w.tags.includes('Metaverse'))
-};
+module.exports = { TRACKED_WALLETS };

@@ -1,9 +1,9 @@
-import { API_KEYS, API_ENDPOINTS } from '../config/api';
+require("dotenv").config();
 
 // Token-related endpoints
-export const fetchTokenPrice = async (tokenAddress: string) => {
+const fetchTokenPrice = async (tokenAddress) => {
   try {
-    await new Promise(resolve => setTimeout(resolve, 100));
+    await new Promise(resolve => setTimeout(resolve, 500));
     const response = await fetch(`https://api.dexscreener.com/tokens/v1/solana/${tokenAddress}`, {
       method: 'GET',
       headers: {
@@ -21,9 +21,9 @@ export const fetchTokenPrice = async (tokenAddress: string) => {
 };
 
 // Wallet-related endpoints
-export const fetchWalletTransactions = async (walletAddress: string) => {
+const fetchWalletTransactions = async (walletAddress) => {
   try {
-    const response = await fetch(`https://api.helius.xyz/v0/addresses/${walletAddress}/transactions/?api-key=${API_KEYS.HELIUS_API_KEY}`, {
+    const response = await fetch(`https://api.helius.xyz/v0/addresses/${walletAddress}/transactions/?api-key=${process.env.HELIUS_API_KEY}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -36,9 +36,9 @@ export const fetchWalletTransactions = async (walletAddress: string) => {
   }
 };
 
-export const fetchWalletTokens = async (walletAddress: string) => {
+const fetchWalletTokens = async (walletAddress) => {
   try {
-    const response = await fetch(API_ENDPOINTS.HELIUS, {
+    const response = await fetch(`https://mainnet.helius-rpc.com/?api-key=${process.env.HELIUS_API_KEY}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -62,9 +62,9 @@ export const fetchWalletTokens = async (walletAddress: string) => {
   }
 };
 
-export const fetchSPLMetadata = async (tokenAddress: string) => {
+const fetchSPLMetadata = async (tokenAddress) => {
   try {
-    const response = await fetch(API_ENDPOINTS.HELIUS, {
+    const response = await fetch(`https://mainnet.helius-rpc.com/?api-key=${process.env.HELIUS_API_KEY}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -84,3 +84,5 @@ export const fetchSPLMetadata = async (tokenAddress: string) => {
     throw error;
   }
 }
+
+module.exports = { fetchTokenPrice, fetchWalletTransactions, fetchWalletTokens, fetchSPLMetadata };
