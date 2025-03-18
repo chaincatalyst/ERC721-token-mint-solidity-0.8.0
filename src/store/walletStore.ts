@@ -154,7 +154,7 @@ async function processTransactions(transactions: any[]) {
 
   const filteredTransactions = transactions.filter(tx => (tx.type === 'SWAP' || tx.type === 'TRANSFER') && tx.description);
   const results = await Promise.all(
-    filteredTransactions.slice(0, 2).map(async (tx) => {
+    filteredTransactions.map(async (tx) => {
       const description = tx.description;
       let token, amount, tokenIcon = 'https://cdn-icons-png.flaticon.com/128/12114/12114239.png';
       if (tx.type == 'TRANSFER') {
