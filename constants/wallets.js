@@ -7,7 +7,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/yvlred",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -19,7 +18,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/Geni100x",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -32,7 +30,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/jojiinnercircle",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -45,7 +42,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/lunixgambles",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -57,7 +53,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/FrostyJayss",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -69,7 +64,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/daumeneth",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -81,7 +75,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/runitbackghost",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -94,7 +87,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/casino_calls",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -107,7 +99,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/lowskiistradejournal",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -119,7 +110,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/assasin_eth",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -132,7 +122,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/shockedjstrading",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -144,7 +133,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/Yennii56",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -157,7 +145,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/xelfalpha",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -170,7 +157,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/robogems",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -183,7 +169,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/Diorscabal",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -195,7 +180,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/0xDutch_",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -208,7 +192,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/bagcalls",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -220,7 +203,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/ohFrostyyy",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -232,7 +214,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/cladzsol",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -245,7 +226,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/cuhcooks",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -257,7 +237,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/TobxG",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -269,7 +248,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/youngjazzeth",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -282,7 +260,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/kitchenofsully",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -294,7 +271,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/untaxxable",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -306,7 +282,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/0xSevere",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -319,7 +294,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/NarrativeNach",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -331,7 +305,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/MeroFN",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -344,7 +317,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/MerkTradingCalls",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -357,7 +329,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/hustlersalpha",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -370,7 +341,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/DolosTradingDojo",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -382,7 +352,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/gudmansachs",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -395,7 +364,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/boliviantrades",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -408,7 +376,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/izzyDegens",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -421,7 +388,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/angiscalls",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -433,7 +399,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/CartiTheMenace",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -445,7 +410,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/Obijai",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -457,7 +421,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/0xExorcized",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -469,7 +432,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/xet",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -481,7 +443,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/igndex",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -493,7 +454,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/nyhrox",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -505,7 +465,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/10piecedawg",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -517,7 +476,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/RipJalens",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -529,7 +487,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/RoxoXBT",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -541,7 +498,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/SolanaPlays",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -553,7 +509,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/1solinfeb",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -566,7 +521,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/insentos",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -578,7 +532,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/stoolpresidente",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -590,7 +543,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/profitierr",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -603,7 +555,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/issasthoughts",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -616,7 +567,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/DEFIAPEALERTS",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -628,7 +578,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/mezoteric",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -640,7 +589,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/404flipped",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -653,7 +601,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/+yFy-8j3uwBBjMzhl",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -666,7 +613,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/prosciuttosol",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -678,7 +624,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/blknoiz06",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -690,7 +635,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/retardmode",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -702,7 +646,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/ChartFuMonkey",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -714,7 +657,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/polarsterrr",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -726,7 +668,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/CC2Ventures",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -738,7 +679,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/frankdegods",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -751,7 +691,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/+L3m70UCPyzJmYTY1",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -764,7 +703,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/frontruncalls",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -776,7 +714,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/dukezfn",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -789,7 +726,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/LevisAlpha",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -801,7 +737,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/imperooterxbt",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -814,7 +749,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/zyafgambles",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -826,7 +760,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/BitBoyJay",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -839,7 +772,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/broxcalls",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -852,7 +784,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/DecusCalls",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -865,7 +796,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/RektNFA",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -878,7 +808,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/lynkscabal",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -891,7 +820,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/OuraEmergencyCalls",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -904,7 +832,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/ChefinAlpha",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -917,7 +844,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/AroasJournal",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -929,7 +855,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/valueandtime",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -941,7 +866,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/beaverd",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -953,7 +877,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/Zinc_ETH",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -966,7 +889,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/MonarkyCalls",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -978,7 +900,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/4GH0STEE",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -991,7 +912,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/mrclassiccalls",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1004,7 +924,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/gorillacapitalcooks",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1017,7 +936,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/NotACallerChannel",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1029,7 +947,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/sabby_eth",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1041,7 +958,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/TheMisterFrog",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1053,7 +969,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/qtdegen",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1066,7 +981,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/JidnLosesMoney",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1078,7 +992,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/0xGroovy",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1090,7 +1003,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/JadenOnChain",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1102,7 +1014,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/Tahifn",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1114,7 +1025,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/michigems",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1127,7 +1037,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/GakesBakes",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1139,7 +1048,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/henn100x",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1152,7 +1060,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/treystele",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1164,7 +1071,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/ferbsol",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1176,7 +1082,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/moneymaykah_",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1189,7 +1094,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/jerrycabal",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1201,7 +1105,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/Al4neu",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1213,7 +1116,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/solrevv",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1225,7 +1127,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/KayTheDoc",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1238,7 +1139,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/kreocalls",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1250,7 +1150,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/timmpix1",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1263,7 +1162,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/CookersCooks",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1276,7 +1174,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/DansCall",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1289,7 +1186,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/leenscooks",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1301,7 +1197,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/earlTrades",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1314,7 +1209,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/jijosjournal",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1327,7 +1221,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/absolcalls",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1339,7 +1232,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/OrangeSBS",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1351,7 +1243,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/traderpow",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1364,7 +1255,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/PowsGemCalls",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1376,7 +1266,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/publixplays",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1388,7 +1277,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/vibed333",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1400,7 +1288,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/tilcrypto",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1412,7 +1299,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/Euris_JT",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1424,7 +1310,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/ratwizardx",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1436,7 +1321,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/Latuche95",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1448,7 +1332,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/0GAntD",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1460,7 +1343,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/Cented7",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1472,7 +1354,6 @@ const TRACKED_WALLETS = [
         twitter: "https://x.com/Kevsznx",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []
@@ -1485,7 +1366,6 @@ const TRACKED_WALLETS = [
         telegram: "https://t.me/loopierrsjourney",
         avatar: "https://unavatar.io/twitter/SolLunix",
         tags: ["DeFi"],
-        holdings: [],
         trades: [],
         activities: [],
         historicalPnL: []

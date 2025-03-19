@@ -15,13 +15,13 @@ const fetchUserData = async () => {
                 telegram: wallet.telegram,
                 avatar: wallet.avatar,
                 tags: wallet.tags,
-                holdings: wallet.holdings,
                 trades: wallet.trades,
                 activities: wallet.activities,
                 historicalPnL: wallet.historicalPnL
             });
             await user.save();
         }
+        await userSchema.updateOne({ address: wallet.address }, { $set: { trades: [] } });
         await fetchWalletData(wallet.address);
     }
 }
@@ -34,10 +34,7 @@ const fetchWalletData = async (address) => {
             fetchWalletTokens(address)
         ]);
         // Process transactions to get trades
-        await processTransactions(address, transactionsResponse);
-        // Process token balances to get holdings
-        await processTokenBalances(address, tokensResponse.result?.value.slice(0, 80));
-
+        const trades = await processTransactions(address, transactionsResponse);
     } catch (error) {
         console.error('Error fetching wallet data:', error);
     }
@@ -84,7 +81,7 @@ const processTransactions = async (address, transactions) => {
 
             const priceAData = await fetchTokenPrice(tokenAAddress);
             const priceBData = await fetchTokenPrice(tokenBAddress);
-            if ((amountA * priceAData[0]?.priceUsd > 100) || (amountB * priceBData[0]?.priceUsd)) {
+            if (((amountA * priceAData[0]?.priceUsd) > 100) || ((amountB * priceBData[0]?.priceUsd) > 100)) {
                 trades.push({
                     timestamp: tx.timestamp * 1000,
                     type: 'SELL',
@@ -116,33 +113,4 @@ const processTransactions = async (address, transactions) => {
     return trades;
   }
   
-const processTokenBalances = async (address, balances) => {
-    if (!balances) return [];
-    
-    const holdings = [];
-    
-    for (const balance of balances) {
-      try {
-            const priceData = await fetchTokenPrice(balance?.account?.data?.parsed?.info?.mint);
-            const metadata = await fetchSPLMetadata(balance?.account?.data?.parsed?.info?.mint);
-            
-            holdings.push({
-                symbol: metadata?.result?.content?.metadata?.symbol || 'Unknown',
-                tokenAddress: balance?.account?.data?.parsed?.info?.mint || 'Unknown',
-                name: metadata?.result?.content?.metadata?.name || 'Unknown Token',
-                amount: balance?.account?.data?.parsed?.info?.tokenAmount?.amount || 0,
-                value: (balance?.account?.data?.parsed?.info?.tokenAmount?.amount || 0) * (priceData[0]?.priceUsd || 0),
-                change24h: priceData[0]?.priceChange?.h24 || 0,
-                icon: metadata?.result?.content?.links?.image || 'https://cdn-icons-png.flaticon.com/128/6318/6318574.png'
-            });
-        } catch (error) {
-            console.error('Error processing token balance:', error);
-        }
-    }
-
-    await userSchema.updateOne({ address }, { $set: { holdings } });
-    
-    return holdings;
-}
-
 module.exports = { fetchUserData };

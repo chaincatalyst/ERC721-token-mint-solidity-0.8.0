@@ -40,11 +40,6 @@ const userSchema = mongoose.Schema({
     required: true,
     default: [],
   },
-  holdings: {
-    type: Array,
-    required: true,
-    default: [],
-  },
   trades: {
     type: Array,
     required: true,
